@@ -7,9 +7,7 @@ class DB
 
     public function connect()
     {
-        $dbDetails = parse_ini_file("../db.ini");
-
-        return mysqli_connect($dbDetails["host"], $dbDetails["user"], $dbDetails["pass"], $dbDetails["dbname"]);
+        return mysqli_connect('localhost', 'root', 'root', 'youtab_coming');
     }
 
     static public function query($sql)
