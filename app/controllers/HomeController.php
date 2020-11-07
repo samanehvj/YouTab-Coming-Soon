@@ -26,6 +26,9 @@ class HomeController extends Controller
 
     public function comingSoon()
     {
+        $this->setView('comingSoon');
+        $this->view->pageTitle = SITENAME . " - Coming Soon";
+        $this->view->render();
     }
 
     public function pageNotFound()
