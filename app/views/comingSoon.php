@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/coming.css">
     <script src="https://kit.fontawesome.com/a424e00da0.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 
             <div id="greeting" class="greeting">
                 <div class="logo">
-                    <img src="imgs/logo-black.png" alt="logo" width="50%">
+                    <img src="/imgs/logo-black.png" alt="logo" width="50%">
                 </div>
                 <h1>
                     Nice to meet you
@@ -63,8 +63,7 @@
                         </div>
 
                         <div class="input-row">
-                            <input type="text" required name="birthdate" placeholder="Your Birthdate"
-                                onfocus="(this.type='date')" autocomplete="off">
+                            <input type="text" required name="birthdate" placeholder="Your Birthdate" onfocus="(this.type='date')" autocomplete="off">
                             <input type="text" required name="country" placeholder="Country" autocomplete="off">
                         </div>
 
