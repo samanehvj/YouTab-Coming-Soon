@@ -1,0 +1,3 @@
+*.DS_*
+/public/subscribers/
+/public/imgs/
