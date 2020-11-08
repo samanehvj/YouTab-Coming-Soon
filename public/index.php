@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define('SITENAME', 'YouTab Brand');
 define('URLROOT', 'http://localhost:8585');
 
