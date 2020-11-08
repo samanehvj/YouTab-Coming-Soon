@@ -39,6 +39,18 @@ i {
     padding: 10px 15px;
 }
 
+.greeting p {
+    font-size: 20px;
+    font-family: "roboto";
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Bw Quinta Pro";
+
+}
+
 .greeting h1 {
     font-size: 70px;
 }
@@ -75,6 +87,7 @@ i {
     color: black;
     border: 1px solid black;
     padding: 10px 20px;
+    font-weight: bold;
 }
 
 .form form {
@@ -147,6 +160,16 @@ i {
     padding: 10px 30px 5px;
 }
 
+.form-head p {
+    font-size: 20;
+    font-family: "roboto";
+}
+
+.form-head h2 {
+    font-size: 35px;
+    font-family: "Bw Quinta Pro";
+}
+
 .form-input {
     display: flex;
     width: 100%;
@@ -170,6 +193,10 @@ i {
 .input-row input {
     /* flex-grow: 1; */
     min-width: 200px;
+}
+
+.subs-card {
+    flex-grow: 2;
 }
 
 @media only screen and (min-width: 800px) {
