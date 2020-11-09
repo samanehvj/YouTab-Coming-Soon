@@ -39,8 +39,12 @@ class HomeController extends Controller
 
     public function login()
     {
-        $this->setView('login');
-        $this->view->render();
+        if ($_SESSION['userIsAdmin'] && !empty($_SESSION['userId'])) {
+            $this->go('home', 'dashboard');
+        } else {
+            $this->setView('login');
+            $this->view->render();
+        }
     }
 
     public function dashboard()
