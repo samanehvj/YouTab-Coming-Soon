@@ -7,12 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">YouTab </div>
+        <div class="sidebar-heading"><?= SITENAME ?> </div>
         <div class="list-group list-group-flush">
-            <a href="dashboard.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="pages.php" class="list-group-item list-group-item-action bg-light">Pages</a>
-            <a href="navigation.php" class="list-group-item list-group-item-action bg-light">Navigation</a>
-            <a href="users.php" class="list-group-item list-group-item-action bg-light">Users</a>
+            <a href="/home/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/subscriber/listView" class="list-group-item list-group-item-action bg-light">Subscribers</a>
+
 
         </div>
     </div>
@@ -36,9 +35,9 @@ if (session_status() == PHP_SESSION_NONE) {
                             Hi <?= $_SESSION['userName'] ?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="userForm.php?userID=<?= $_SESSION['nUserID'] ?>">Profile</a>
+                            <a class="dropdown-item" href="#">Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="doLogout.php">Sign out</a>
+                            <a class="dropdown-item" href="<?= URLROOT ?>/home/doLogOut">Sign out</a>
                         </div>
                     </li>
                 </ul>
