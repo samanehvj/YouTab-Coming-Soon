@@ -5,7 +5,7 @@ class SubscriberController extends Controller
 
     public function backToComingSoon()
     {
-        header('Location: ' . URLROOT);
+        header('Location: ' . URLROOT . "/#form");
     }
 
     public function add()
