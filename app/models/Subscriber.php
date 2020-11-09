@@ -37,7 +37,7 @@ class Subscriber
 
     public function fetchAll()
     {
-        $sql = "SELECT * FROM subscribers";
+        $sql = "SELECT * FROM subscribers ORDER BY id DESC";
         $this->db->query($sql);
         return $this->db->resultSet();
     }
