@@ -21,7 +21,7 @@
 
             <div id="greeting" class="greeting">
                 <div class="logo">
-                    <img src="/imgs/logo-black.png" alt="logo" width="50%">
+                    <img src="/imgs/logo-black.png" alt="logo" style="max-width: 50%; max-height:100px;">
                 </div>
                 <h1>
                     Nice to <br>
