@@ -48,7 +48,6 @@ class HomeController extends Controller
         if ($_SESSION['userIsAdmin'] && !empty($_SESSION['userId'])) {
             $subscriberModel = $this->model('Subscriber');
             $dashboardData['subscriberCount'] = $subscriberModel->count();
-            $dashboardData['subscribers'] = $subscriberModel->fetchAll();
 
             $this->setView('admin/dashboard', $dashboardData);
             $this->view->render();
@@ -73,5 +72,15 @@ class HomeController extends Controller
         } else {
             $this->go('home', 'login');
         }
+    }
+
+    public function doLogOut()
+    {
+
+        unset($_SESSION["userId"]);
+        unset($_SESSION["userIsAdmin"]);
+        unset($_SESSION["userName"]);
+        unset($_SESSION["userEmail"]);
+        $this->go("home", "login");
     }
 }
