@@ -27,4 +27,18 @@ class Subscriber
 
         return $this->db->execute();
     }
+
+    public function count()
+    {
+        $sql = "SELECT COUNT(*) as subscriber_count FROM subscribers";
+        $this->db->query($sql);
+        return $this->db->single()->subscriber_count;
+    }
+
+    public function fetchAll()
+    {
+        $sql = "SELECT * FROM subscribers";
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
 }
