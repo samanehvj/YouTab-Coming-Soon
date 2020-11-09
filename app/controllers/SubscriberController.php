@@ -62,4 +62,17 @@ class SubscriberController extends Controller
             }
         }
     }
+
+    public function listView()
+    {
+
+        if ($_SESSION['userIsAdmin'] && !empty($_SESSION['userId'])) {
+            $subscriberModel = $this->model('Subscriber');
+            $dashboardData['subscribers'] = $subscriberModel->fetchAll();
+            $this->setView('admin/subscribersList', $dashboardData);
+            $this->view->render();
+        } else {
+            $this->go('home', 'login');
+        }
+    }
 }
