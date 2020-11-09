@@ -15,7 +15,9 @@
 
 <body>
     <div class="flex-container">
-        <div class="flex-col image"></div>
+        <div class="flex-col image">
+            <div class="img-mask"><a href="#greeting" class="m-btn"><i class="fas fa-chevron-down"></i></a></div>
+        </div>
 
         <div class="flex-col content">
 
