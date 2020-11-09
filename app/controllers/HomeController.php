@@ -37,23 +37,41 @@ class HomeController extends Controller
         $this->view->render();
     }
 
+    public function login()
+    {
+        $this->setView('login');
+        $this->view->render();
+    }
+
+    public function dashboard()
+    {
+        if ($_SESSION['userIsAdmin'] && !empty($_SESSION['userId'])) {
+            $subscriberModel = $this->model('Subscriber');
+            $dashboardData['subscriberCount'] = $subscriberModel->count();
+            $dashboardData['subscribers'] = $subscriberModel->fetchAll();
+
+            $this->setView('admin/dashboard', $dashboardData);
+            $this->view->render();
+        } else {
+            $this->go('home', 'login');
+        }
+    }
+
     public function doLogIn()
     {
-
         $userModel = $this->model('User');
 
         $user = $userModel->LogIn($_POST["username"], $_POST["password"]);
 
-        $_SESSION["userId"] = $user['id'];
-        $_SESSION["userIsAdmin"] = $user['is_admin'];
+        $_SESSION["userId"] = $user->id;
+        $_SESSION["userIsAdmin"] = $user->is_admin;
+        $_SESSION["userName"] = $user->name;
+        $_SESSION["userEmail"] = $user->email;
 
         if ($_SESSION["userId"] && $_SESSION['userIsAdmin']) {
-            echo "hello admin";
-            // $this->go("user", "main"); // if details entered exist in the db allow user to login
+            $this->go('home', 'dashboard');
         } else {
-            //$this->loadView("views/login.php");
-            // $this->go("public", "errorLogin"); // if details entered do not exist in the db redirect user back to login form with error
-            echo "not admin";
+            $this->go('home', 'login');
         }
     }
 }
