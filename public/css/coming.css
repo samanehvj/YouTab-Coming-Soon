@@ -58,6 +58,7 @@ h1 {
 .greeting .logo {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .greeting .social-media {
