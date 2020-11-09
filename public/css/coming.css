@@ -28,6 +28,20 @@ i {
     overflow-x: hidden;
 }
 
+.img-mask {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.img-mask a {
+    padding: 20px;
+    padding-bottom: 50px;
+    font-size: 30px;
+}
+
 .greeting {
     background-color: white;
     color: black;
@@ -203,5 +217,9 @@ h1 {
 @media only screen and (min-width: 800px) {
     .flex-col {
         max-width: 50%;
+    }
+
+    .img-mask a {
+        display: none;
     }
 }
